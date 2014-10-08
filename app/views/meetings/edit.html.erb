@@ -1,0 +1,18 @@
+<h1>Editing meeting</h1>
+
+<%=  form_for @meeting , :url => {:controller => "meetings",:action => "update",:id => @meeting } do |f| %>
+
+<div class="field">
+<%= f.label :meetingname %><br />
+<%= f.text_field :meetingname %><br />
+</div>
+<div class="field">
+<%= f.label :date %><br />
+<%= f.text_field :date %><br />
+</div>
+<div class="actions">
+<%= f.submit %>
+</div>
+<% end %>
+<%= link_to 'Show', @meeting %> |
+<%= link_to 'Back', meetings_path %>

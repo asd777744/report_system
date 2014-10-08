@@ -1,0 +1,43 @@
+<%= form_for(@raport) do |f| %>
+  <% if @raport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raport.errors.count, "error") %> prohibited this raport from being saved:</h2>
+
+      <ul>
+      <% @raport.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="field">
+    <%= f.collection_select :meeting_id, Meeting.all, :id, :meetingname, :prompt=>"select his meeting" %> 
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :module %><br>
+    <%= f.text_area :module %>
+  </div>
+  <div class="field">
+    <%= f.label :this_week_work %><br>
+    <%= f.text_area :this_week_work %>
+  </div>
+  <div class="field">
+    <%= f.label :need_help %><br>
+    <%= f.text_area :need_help %>
+  </div>
+  <div class="field">
+    <%= f.label :next_week_work %><br>
+    <%= f.text_area :next_week_work %>
+  </div>
+  <div class="field">
+    <%= f.label :share_tech %><br>
+    <%= f.text_area :share_tech %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,38 @@
+<h1>Listing raports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meeting</th>
+      <th>Name</th>
+      <th>Module</th>
+      <th>This week work</th>
+      <th>Need help</th>
+      <th>Next week work</th>
+      <th>Share tech</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @raports.each do |raport| %>
+      <tr>
+        <td><%= raport.meeting_id %></td>
+        
+        <td><%= raport.name %></td>
+        <td><%= raport.module %></td>
+        <td><%= raport.this_week_work %></td>
+        <td><%= raport.need_help %></td>
+        <td><%= raport.next_week_work %></td>
+        <td><%= raport.share_tech %></td>
+        <td><%= link_to 'Show', raport %></td>
+        <td><%= link_to 'Edit', edit_raport_path(raport) %></td>
+        <td><%= link_to 'Destroy', raport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Raport', new_raport_path %>
