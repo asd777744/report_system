@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :raports
-
-  resources :meetings
-
+  resources :meetings do
+    resources :raports
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -30,7 +29,7 @@ Rails.application.routes.draw do
   #     end
   #   end
 
-  # Example resource route with sub-resources:
+  # Example resource route with sub-resources:x
   #   resources :products do
   #     resources :comments, :sales
   #     resource :seller

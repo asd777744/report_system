@@ -1,8 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>MeetingID:</strong>
   <%= @meeting.id %>
@@ -20,4 +17,8 @@
 </p>
 
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
-<%= link_to 'Back', meetings_path %>
+<%= link_to 'Back', meetings_path %> |
+<%= link_to 'new report', new_meeting_raport_path(@meeting) %> 
+
+
+
